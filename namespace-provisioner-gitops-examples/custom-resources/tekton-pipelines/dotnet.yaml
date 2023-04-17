@@ -7,7 +7,7 @@ metadata:
   labels:
     apps.tanzu.vmware.com/pipeline: test
   name: tekton-dotnet-pipeline
-  namespace: default
+  namespace: #@ data.values.name
 spec:
   params:
   - name: source-url
