@@ -1,3 +1,6 @@
+#@ load("@ytt:data", "data")
+#@ if/end hasattr(data.values, "language") and data.values.language == "golang":
+---
 apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
