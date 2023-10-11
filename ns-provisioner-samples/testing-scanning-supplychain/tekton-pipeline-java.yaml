@@ -38,10 +38,11 @@ spec:
               MVNW=mvnw
               GRADLE="build.gradle"
               if [ -f "$MVNW" ]; then
-                  chmod +x ./mvnw
+                  chmod a+x ./mvnw
                   ./mvnw test
               elif [ -f "$GRADLE" ]; then
-                  gradle test --debug
+                   chmod a+x ./gradlew
+                  ./gradle test --debug
               else
                   echo "WARNING: No tests were run. This workload is not built with one of the currently supported frameworks (maven or gradle). If using another language/framework, update the image and the script sections of the 'pipeline.tekton.dev' resource in your namespace to match your language/framework."
                   #exit 1
