@@ -33,6 +33,7 @@ spec:
             image: gradle
             script: |-
               cd `mktemp -d`
+              chmod +x ./mvnw
               wget -qO- $(params.source-url) | tar xvz -m
               pwd
               MVNW=mvnw
